@@ -1,6 +1,6 @@
-describe("test", () => {
+describe("example", () => {
   it("should pass", () => {
-    console.log("Hello man");
+    console.log("Hello world");
     expect(true).toBe(true);
   });
 });
