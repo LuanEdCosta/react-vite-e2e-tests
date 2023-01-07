@@ -1,26 +1,13 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
+
+import { useTodo } from "./useTodo";
 
 import "./styles/App.scss";
 
 export function App() {
   const taskRef = useRef<HTMLInputElement | null>(null);
 
-  const [task, setTask] = useState("");
-  const [todos, setTodos] = useState<string[]>([]);
-
-  const handleAddTodo = () => {
-    if (task === "" || todos.includes(task)) return;
-    setTodos((currentTodos) => [...currentTodos, task]);
-    setTask("");
-  };
-
-  const handleRemoveTodo = (index: number) => {
-    setTodos((currentTodos) => {
-      const todosClone = [...currentTodos];
-      todosClone.splice(index, 1);
-      return todosClone;
-    });
-  };
+  const { task, todos, setTask, handleAddTodo, handleRemoveTodo } = useTodo();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
