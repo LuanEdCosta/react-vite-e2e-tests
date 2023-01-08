@@ -8,6 +8,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show-report",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -16,6 +18,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.29.2",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
