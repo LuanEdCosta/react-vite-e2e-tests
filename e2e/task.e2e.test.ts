@@ -38,6 +38,29 @@ test.describe("Todo page tests", () => {
     await expect(page.getByText(task2)).toBeVisible();
   });
 
+  test("create multiple tasks and delete one", async ({ page }) => {
+    const task1 = "first task";
+    const task2 = "second task";
+
+    await page.locator("input").click();
+    await page.locator("input").fill(task1);
+    await page.getByRole("button", { name: "Create Task" }).click();
+
+    await page.locator("input").click();
+    await page.locator("input").fill(task2);
+    await page.getByRole("button", { name: "Create Task" }).click();
+
+    await expect(page.locator("ul>li")).toHaveCount(2);
+    await expect(page.getByText(task1)).toBeVisible();
+    await expect(page.getByText(task2)).toBeVisible();
+
+    await page.locator("li", { hasText: task1 }).getByRole("button").click();
+
+    await expect(page.locator("ul>li")).toHaveCount(1);
+    await expect(page.getByText(task1)).not.toBeVisible();
+    await expect(page.getByText(task2)).toBeVisible();
+  });
+
   test("focus input after creating task", async ({ page }) => {
     const task = "new task";
 
