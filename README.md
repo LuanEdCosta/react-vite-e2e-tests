@@ -6,7 +6,7 @@ The project is a basic TODO List, but I added some SCSS to make it more beautifu
 
 ---
 
-Created tests:
+Tests:
 
 - [E2E Tests](/e2e/task.e2e.test.ts)
 - [Vitest Example Test](/src/tests/example.test.ts)
