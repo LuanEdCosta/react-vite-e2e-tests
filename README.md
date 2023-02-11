@@ -1,4 +1,4 @@
-# :test_tube: react-vite-e2e-tests
+# :test_tube: React + Vite + E2E Tests
 
 Studying **Vitest** and **E2E Tests with Playwright**.
 
